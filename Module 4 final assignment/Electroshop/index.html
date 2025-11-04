@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroShop - Electronics Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>ElectroShop</h1>
+    <nav>
+      <a href="#" id="home-tab">Home</a>
+      <a href="#" id="shop-tab">Shop</a>
+      <a href="#" id="contact-tab">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home-section" class="content-section">
+      <h2>Welcome to ElectroShop!</h2>
+      <p>Your one-stop shop for the latest electronics at unbeatable prices.</p>
+    </section>
+
+    <!-- SHOP SECTION -->
+    <section id="shop-section" class="content-section" style="display: none;">
+      <div class="shop-header">
+        <h2>Featured Products</h2>
+        <select id="price-filter">
+          <option value="default">Sort by</option>
+          <option value="low-high">Price: Low → High</option>
+          <option value="high-low">Price: High → Low</option>
+        </select>
+      </div>
+      <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact-section" class="content-section" style="display: none;">
+      <h2>Contact Us</h2>
+      <p>Email: support@electroshop.com</p>
+      <p>Phone: (307) 555-0139</p>
+      <p>Address: 123 Tech Avenue, Cheyenne, WY</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer">
+      <div class="row row__column">
+        <p>&copy; 2025 ElectroShop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

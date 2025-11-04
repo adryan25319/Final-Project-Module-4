@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "description": "Noise-cancelling Bluetooth headphones with 20-hour battery life.",
+    "price": 89.99,
+    "image": "Assets/Headphones.png"
+  },
+  {
+    "id": 2,
+    "name": "4K Smart TV",
+    "description": "Ultra HD Smart TV with voice control and HDR.",
+    "price": 599.99,
+    "image": "Assets/4k__tv.png"
+  },
+  {
+    "id": 3,
+    "name": "Gaming Mouse",
+    "description": "Ergonomic RGB mouse with adjustable DPI settings.",
+    "price": 49.99,
+    "image": "Assets/Ergonomic RGB Gaming Mouse Close-Up.png"
+  },
+  {
+    "id": 4,
+    "name": "Smartphone X",
+    "description": "Latest smartphone with powerful performance and great camera.",
+    "price": 799.99,
+    "image": "Assets/Smartphone.png"
+  },
+  {
+    "id": 5,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical keyboard with blue switches.",
+    "price": 119.99,
+    "image": "Assets/Mechanical-keyboard.png"
+  },
+  {
+    "id": 6,
+    "name": "Laptop Pro 15",
+    "description": "15-inch laptop with 16GB RAM and 512GB SSD.",
+    "price": 1099.99,
+    "image": "Assets/Laptop.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Wireless Charger",
+    "description": "Fast charging pad for all Qi-compatible devices.",
+    "price": 29.99,
+    "image": "Assets/WirelessCharger.webp"
+  },
+  {
+    "id": 8,
+    "name": "Smartwatch 5",
+    "description": "Fitness tracking and notifications on your wrist.",
+    "price": 199.99,
+    "image": "Assets/Smartwatch.png"
+  },
+  {
+    "id": 9,
+    "name": "Bluetooth Speaker",
+    "description": "Portable waterproof speaker with powerful sound.",
+    "price": 59.99,
+    "image": "Assets/Black-Bluetooth-Speaker-PNG-HD.png"
+  },
+  {
+    "id": 10,
+    "name": "Drone 4K",
+    "description": "Camera drone with 4K recording and GPS.",
+    "price": 349.99,
+    "image": "Assets/Quadcopter.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Wireless Earbuds",
+    "description": "Compact earbuds with noise isolation.",
+    "price": 79.99,
+    "image": "Assets/Wireless_Earbuds.png"
+  },
+  {
+    "id": 12,
+    "name": "VR Headset",
+    "description": "Immersive VR headset for gaming and experiences.",
+    "price": 399.99,
+    "image": "Assets/VR.png"
+  },
+  {
+    "id": 13,
+    "name": "Smart Home Hub",
+    "description": "Control all your smart home devices easily.",
+    "price": 149.99,
+    "image": "Assets/Home_Hub.png"
+  },
+  {
+    "id": 14,
+    "name": "Action Camera",
+    "description": "Waterproof 4K action cam for outdoor adventures.",
+    "price": 249.99,
+    "image": "Assets/Action_Camera.png"
+  },
+  {
+    "id": 15,
+    "name": "Monitor 27\"",
+    "description": "Full HD 27-inch monitor with 144Hz refresh rate.",
+    "price": 229.99,
+    "image": "Assets/monitor.webp"
+  },
+  {
+    "id": 16,
+    "name": "Gaming Console",
+    "description": "Next-gen console with ultra-fast loading times.",
+    "price": 499.99,
+    "image": "Assets/GamingConsole.png"
+  },
+  {
+    "id": 17,
+    "name": "Wireless Router",
+    "description": "Dual-band router with high-speed WiFi 6.",
+    "price": 139.99,
+    "image": "Assets/pngtree-3d-wireless-router-png-illustration-png-image_13361507.png"
+  },
+  {
+    "id": 18,
+    "name": "External SSD 1TB",
+    "description": "Portable 1TB SSD for fast storage and transfers.",
+    "price": 179.99,
+    "image": "Assets/HardDrive.png"
+  },
+  {
+    "id": 19,
+    "name": "Noise-Cancelling Mic",
+    "description": "Professional USB microphone for streaming.",
+    "price": 129.99,
+    "image": "Assets/NoiseCancellingMic.png"
+  },
+  {
+    "id": 20,
+    "name": "Smart Light Bulb",
+    "description": "Color-changing LED bulb controllable via app.",
+    "price": 24.99,
+    "image": "Assets/smartLightzbulb.png"
+  }
+]
