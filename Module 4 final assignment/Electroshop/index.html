@@ -9,10 +9,11 @@
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
     <h1>ElectroShop</h1>
     <nav>
-      <a href="#" id="home-tab">Home</a>
+      <a href="#" id="home-tab" class="active">Home</a>
       <a href="#" id="shop-tab">Shop</a>
       <a href="#" id="contact-tab">Contact</a>
     </nav>
@@ -20,22 +21,30 @@
 
   <main>
     <!-- HOME SECTION -->
-    <section id="home-section" class="content-section">
+    <section id="home-section" class="content-section active">
       <h2>Welcome to ElectroShop!</h2>
       <p>Your one-stop shop for the latest electronics at unbeatable prices.</p>
+
+      <!-- SEARCH BAR -->
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for products..." />
+        <button id="search-button">Search</button>
+      </div>
     </section>
 
     <!-- SHOP SECTION -->
     <section id="shop-section" class="content-section" style="display: none;">
       <div class="shop-header">
-        <h2>Featured Products</h2>
+        <h2>Featured <span class="highlight">Products</span></h2>
         <select id="price-filter">
           <option value="default">Sort by</option>
           <option value="low-high">Price: Low → High</option>
           <option value="high-low">Price: High → Low</option>
         </select>
       </div>
-      <div id="product-list" class="product-grid"></div>
+      <div id="product-list" class="product-grid">
+        <!-- Products dynamically loaded -->
+      </div>
     </section>
 
     <!-- CONTACT SECTION -->
@@ -47,15 +56,59 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer">
-      <div class="row row__column">
-        <p>&copy; 2025 ElectroShop. All rights reserved.</p>
-      </div>
+      <p>&copy; 2025 ElectroShop. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // --- NAVIGATION ---
+    const sections = document.querySelectorAll(".content-section");
+    const tabs = {
+      home: document.getElementById("home-tab"),
+      shop: document.getElementById("shop-tab"),
+      contact: document.getElementById("contact-tab")
+    };
+
+    Object.entries(tabs).forEach(([key, tab]) => {
+      tab.addEventListener("click", () => {
+        // Hide all sections
+        sections.forEach(s => s.style.display = "none");
+        sections.forEach(s => s.classList.remove("active"));
+        // Show selected
+        document.getElementById(`${key}-section`).style.display = "block";
+        document.getElementById(`${key}-section`).classList.add("active");
+
+        // Load products when shop tab clicked
+        if (key === "shop") loadProducts();
+      });
+    });
+
+    // --- SEARCH FUNCTIONALITY ---
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+
+    searchButton.addEventListener("click", () => {
+      const query = searchInput.value.toLowerCase();
+      const filtered = productsData.filter(p => p.name.toLowerCase().includes(query));
+      // Switch to shop section
+      sections.forEach(s => s.style.display = "none");
+      document.getElementById("shop-section").style.display = "block";
+      displayProducts(filtered);
+    });
+
+    searchInput.addEventListener("keyup", (e) => {
+      if (e.key === "Enter") searchButton.click();
+    });
+
+    // --- LOAD PRODUCTS ON PAGE LOAD ---
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("home-section").style.display = "block";
+    });
+  </script>
 </body>
 
 </html>

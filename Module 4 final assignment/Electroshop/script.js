@@ -8,6 +8,7 @@ async function loadProducts() {
     displayProducts(products);
   } catch (err) {
     console.error("Failed to load products:", err);
+    document.getElementById("product-list").innerHTML = "<p>Failed to load products.</p>";
   }
 }
 
@@ -15,8 +16,8 @@ function displayProducts(products) {
   const container = document.getElementById("product-list");
   container.innerHTML = "";
 
-  if (products.length === 0) {
-    container.innerHTML = "<p>No products available at this time.</p>";
+  if (!products.length) {
+    container.innerHTML = "<p>No products available.</p>";
     return;
   }
 
@@ -25,10 +26,12 @@ function displayProducts(products) {
     card.className = "product-card";
     card.innerHTML = `
       <img src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>${product.description}</p>
-      <p class="price">$${product.price.toFixed(2)}</p>
-      <button onclick="addToCart('${product.name}')">Add to Cart</button>
+      <div class="product-info">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <p class="price">$${product.price.toFixed(2)}</p>
+        <button onclick="addToCart('${product.name}')">Add to Cart</button>
+      </div>
     `;
     container.appendChild(card);
   });
@@ -38,34 +41,16 @@ function addToCart(productName) {
   alert(`${productName} added to cart!`);
 }
 
+// Sort Products
 document.getElementById("price-filter").addEventListener("change", (e) => {
-  const value = e.target.value;
   let sorted = [...productsData];
+  const value = e.target.value;
 
-  if (value === "low-high") {
-    sorted.sort((a, b) => a.price - b.price);
-  } else if (value === "high-low") {
-    sorted.sort((a, b) => b.price - a.price);
-  }
+  if (value === "low-high") sorted.sort((a, b) => a.price - b.price);
+  else if (value === "high-low") sorted.sort((a, b) => b.price - a.price);
 
   displayProducts(sorted);
 });
 
-// Navigation handling
-const sections = document.querySelectorAll(".content-section");
-const tabs = {
-  home: document.getElementById("home-tab"),
-  shop: document.getElementById("shop-tab"),
-  contact: document.getElementById("contact-tab")
-};
-
-Object.entries(tabs).forEach(([key, tab]) => {
-  tab.addEventListener("click", () => {
-    sections.forEach(s => s.style.display = "none");
-    document.getElementById(`${key}-section`).style.display = "block";
-    if (key === "shop") loadProducts();
-  });
-});
-
-// Default to home
-document.getElementById("home-section").style.display = "block";
+// Load products on page load
+window.addEventListener("DOMContentLoaded", loadProducts);
